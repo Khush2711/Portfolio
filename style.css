@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Be Vietnam Pro", sans-serif;
+}
+
+.wrapper{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+#img{
+    width: 50%;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.logo{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.logo-txt{
+    font-size: 1.6rem;
+    margin-left: -1.2rem;
+    font-weight: bold;
+}
+
+.bookmarks{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center; 
+    gap: 2rem;
+}
+
+.bookmarks .contact{
+   margin-left: -1.5rem;
+}
+
+.bookmarks div {
+    width: 95px;
+} 
+
+.bookmarks div a{
+    color:black;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    }
+
+.bookmarks div a:hover{
+    transition:font-weight  0.1s;
+    font-weight: 501;
+} 
+
+.hero-section{
+    display: flex;
+    position: relative;
+    padding: 10% 2%;
+    gap:5rem;
+
+}
+
+.leftPart{
+    display: flex;
+    flex-direction: column;
+    gap:2em;
+}
+
+.name{
+    user-select: none;
+    position: absolute;
+    font-size: 7rem;
+    color: rgb(231, 231, 231);;
+    top:100%;
+}
+
+.hello-section{
+    font-size: 2.5rem;
+    color: #343d68;
+}
+
+.role{
+    color: #4e45d5;
+}
+
+.self-introduction{
+    font-size: 1rem;
+    font-weight: 200;    
+}
+
+
+/* Button Code */
+
+.btn{
+    max-width: 20%;
+    background-color: #e84949;
+    padding:1% 2%;
+    font-size: 1rem;
+    position: relative;
+    border-color: #e84949;
+    z-index: 1;
+}
+.btn::before{
+    content:"";
+    background-color:white;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    transform: scaleX(0);
+    transition-property:transform ;
+    transition-duration: 0.8s;
+    transform-origin:left;
+    z-index:-1;
+}
+.btn:hover::before{
+    transform:scaleX(1);
+}
+
