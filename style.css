@@ -1,136 +1,293 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Be Vietnam Pro", sans-serif;
 }
 
-.wrapper{
+.wrapper {
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-between;
 }
 
-#img{
+#img {
     width: 50%;
 }
 
-.container{
+.container {
     width: 1200px;
     margin: 0 auto;
 }
 
-.logo{
+.logo {
     display: flex;
     justify-content: baseline;
     align-items: center;
 }
 
-.logo-txt{
+.logo-txt {
     font-size: 1.6rem;
     margin-left: -1.2rem;
     font-weight: bold;
 }
 
-.bookmarks{
+.bookmarks {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(3,1fr);
-    align-items: center; 
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
     gap: 2rem;
 }
 
-.bookmarks .contact{
-   margin-left: -1.5rem;
+.bookmarks .contact {
+    margin-left: -1.5rem;
 }
 
 .bookmarks div {
     width: 95px;
-} 
+}
 
-.bookmarks div a{
-    color:black;
+.bookmarks div a {
+    color: black;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    }
+}
 
-.bookmarks div a:hover{
-    transition:font-weight  0.1s;
+.bookmarks div a:hover {
+    transition: font-weight 0.1s;
     font-weight: 501;
-} 
+}
 
-.hero-section{
+.hero-section {
     display: flex;
     position: relative;
-    padding: 10% 2%;
-    gap:5rem;
-
+    padding: 6% 2%;
+    gap: 5rem;
 }
 
-.leftPart{
+.leftPart {
     display: flex;
     flex-direction: column;
-    gap:2em;
+    gap: 2em;
+    /* padding-top: 5rem; */
 }
 
-.name{
+.name {
     user-select: none;
     position: absolute;
     font-size: 7rem;
-    color: rgb(231, 231, 231);;
-    top:100%;
+    color: rgb(231, 231, 231);
+    top: 100%;
 }
 
-.hello-section{
+.hello-section {
     font-size: 2.5rem;
     color: #343d68;
 }
 
-.role{
+.role {
     color: #4e45d5;
 }
 
-.self-introduction{
+.self-introduction {
     font-size: 1rem;
-    font-weight: 200;    
+    font-weight: 200;
 }
 
 
 /* Button Code */
 
-.btn{
+.btn {
     max-width: 20%;
     background-color: #e84949;
-    padding:1% 2%;
+    padding: 1% 2%;
     font-size: 1rem;
     position: relative;
     border-color: #e84949;
     z-index: 1;
 }
-.btn::before{
-    content:"";
-    background-color:white;
+
+.btn::before {
+    content: "";
+    background-color: white;
     backdrop-filter: blur(10px);
     position: absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     transform: scaleX(0);
-    transition-property:transform ;
+    transition-property: transform;
     transition-duration: 0.8s;
-    transform-origin:left;
-    z-index:-1;
-}
-.btn:hover::before{
-    transform:scaleX(1);
+    transform-origin: left;
+    z-index: -1;
 }
 
+.btn:hover::before {
+    transform: scaleX(1);
+}
+
+.rightPart {
+    position: relative;
+    margin-top: -5rem;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.user {
+    padding: 2.5rem;
+    transition: all 1s;
+    animation: scaleImg 5s linear infinite;
+    /* background-color: aqua; */
+}
+
+.user img{
+    height: 25rem;
+    width: 20rem;
+}
+
+
+@keyframes scaleImg {
+    0% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(0.9);
+        filter: grayscale(1);
+        box-shadow: 1px 1px 5px black;
+    }
+
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+.icon-dots{
+    z-index: 1;
+    bottom : 2rem;
+    right: 2rem;
+    transition: all 1s;
+    animation: dots 5s linear infinite;
+}
+
+.icon-dots img{
+    height: 4rem;
+}
+
+@keyframes dots {
+    0% {
+        transform: translateY(-0.5rem);
+    }
+
+    50% {
+        transform: translateY(0.5rem);
+    }
+
+    100% {
+        transform: translateY(-0.5rem);
+    }
+}
+
+.icon-zigzag{
+    transition: all 1s;
+    animation: zigzag 5s linear infinite;
+    top : 1rem;
+    left : 2rem;
+    z-index: 1;
+}
+
+.icon-zigzag img{
+    height: 5rem;
+}
+
+@keyframes zigzag {
+    0% {
+        transform: translate(-1em,1em);
+    }
+
+    50%{
+        transform: translate(0em,0em);
+    }
+
+    100% {
+        transform: translate(-1em,1em);
+    }
+}
+
+.icon-circle{
+    z-index: 1;
+    bottom: 4rem;
+    left: 1rem;
+    transition: all 1s;
+    animation: circle 5s linear infinite;
+}
+
+@keyframes circle {
+    0%{
+        transform: translate(3rem);
+    }
+
+    50%{
+        transform: translate(1rem,2rem);
+    }
+    100%{
+        transform: translate(3rem);
+    }
+}
+
+.icon-cube{
+    z-index: 1;
+    right: 0;
+    top:1rem;
+    right: 1rem;
+    transition: all 1s;
+    animation: cube 5s linear 5s infinite;
+}
+
+@keyframes cube {
+    0%{
+        transform: rotateY(0deg) translateY(8px);
+    }
+
+    50%{
+        transform: rotateY(180deg);
+    }
+    100%{
+        transform: rotateY(0deg) translateY(8px);
+    }
+}
+
+
+.icon-plus{
+    left: 50%;
+    z-index: 1;
+    transition: all 1s;
+    animation: plus 5s linear infinite;
+}
+
+@keyframes plus {
+
+    0%{
+        transform: translateY(2rem);
+    }
+
+    50%{
+        transform: translateY(3.1rem);
+    }
+    100%{
+        transform: translateY(2rem);
+    }
+    
+}
